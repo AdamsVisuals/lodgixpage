@@ -1027,14 +1027,116 @@ body {
     text-align: center;
 }
 
+/* Footer Bottom Styles */
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    color: var(--gray);
-    font-size: 14px;
+    padding-top: 2.5rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    order: 1;
+}
+
+.legal-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    order: 2;
+}
+
+.legal-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.25rem 0;
+}
+
+.legal-links a:hover {
+    color: #D4AF37;
+}
+
+.legal-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.legal-links a:hover::after {
+    width: 100%;
+}
+
+.divider {
+    color: rgba(212, 175, 55, 0.4);
+    font-size: 0.9rem;
+}
+
+.company-credit {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    order: 3;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.prefix {
+    display: inline-block;
+    margin-right: 0.3rem;
+    font-weight: 300;
+}
+
+.company {
+    color: #D4AF37;
+    font-weight: 500;
+    position: relative;
+}
+
+.company::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    opacity: 0.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .copyright,
+    .legal-links {
+        order: initial;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .company-credit {
+        margin-top: 1rem;
+    }
 }
 
 .social-links {
